@@ -1,0 +1,71 @@
+﻿
+
+
+
+@model KidKinderProject.Entities.BookASeat
+
+<div class="col-lg-5">
+    <div class="card border-0">
+        <div class="card-header bg-secondary text-center p-4">
+            <h1 class="text-white m-0">Koltuk Ayırtın</h1>
+        </div>
+        <div class="card-body rounded-bottom bg-primary p-5">
+            <form method="post" action="/UILayout/BookNow/">
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control border-0 p-4"
+                           placeholder="Adınız" id="name"
+                           name="Name"
+                           required="required" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="mail"
+                           class="form-control border-0 p-4"
+                           placeholder="Mail Adresiniz"
+                           name="Email"
+                           required="required" />
+                </div>
+                <div class="form-group">
+                    @Html.DropDownListFor(x => x.ClassRoomId, (SelectList)ViewBag.ClassRoom, "Sınıf Seçiniz", new { @class = "form-control", @id = "drop" })
+                </div>
+                <div>
+                    <button onclick="booknow()" class="btn btn-secondary btn-block border-0 py-3"
+                            type="submit">
+                        Rezervasyon Yap
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+
+    function booknow() {
+        var name = $("#name").val();
+        var mail = $("#mail").val();
+        var drop = $("#drop").val();
+        var values = {
+            Name=name,
+            Email=mail,
+            ClassRoomId=drop
+        };
+        $.ajax({
+            url: "/UILayout/BookNow/",
+            contentType: "application/json",
+            dataType:"json",
+            method:"post",
+            data: { values },
+            success: function (func) {
+                var result = jQuery.parseJSON(func);
+                swal("Kaydınız başarıyla oluşturuldu.", "", "info").then((result) => {
+                    location.reload();
+                });
+            }
+        });
+
+    }
+
+
+</script>

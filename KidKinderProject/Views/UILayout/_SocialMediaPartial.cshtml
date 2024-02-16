@@ -1,0 +1,17 @@
+﻿
+
+
+
+@model List<KidKinderProject.Entities.SocialMedia>
+<div class="d-flex justify-content-start mt-4">
+    @foreach (var item in Model)
+    {
+        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+           style="width: 38px; height: 38px"
+           href="@item.Url">
+            <i class="@item.Icon"></i>
+        </a>
+    }
+
+
+</div>

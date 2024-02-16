@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "İletişim";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <p class="section-title px-5">
+                <span class="px-2">İLETİŞİM</span>
+            </p>
+            <h1 class="mb-4">Herhangi Bir Soru İçin Bize Ulaşın</h1>
+        </div>
+        <div class="row">
+
+            @Html.Partial("~/Views/Contact/ContactForm.cshtml")
+            @Html.Action("ContactInfo")
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,62 @@
+﻿@model List<KidKinderProject.Entities.Teacher>
+@{
+    ViewBag.Title = "TeacherList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Öğretmen Listesi</h5>
+        <span>Öğretmenlerimizle ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+        
+    </div>
+    <div class="card-block table-border-style">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Öğretmen Adı</th>
+                        <th>Alanı</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                        <th>Detaylar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@item.TeacherId</th>
+                            <td><img src="~/@item.ImageUrl" class="img-thumbnail rounded-pill mr-3" style="width:75px; height:75px;" />@item.Name</td>
+                            <td>@item.Title</td>
+                            <td><a href="/AdminTeacher/RemoveTeacher/@item.TeacherId" class="btn btn-danger">Sil</a></td>
+                            <td><a href="/AdminTeacher/UpdateTeacher/@item.TeacherId" class="btn btn-success">Güncelle</a></td>
+                            <td><button type="button" data-toggle="modal" data-target="#Modal1-@item.TeacherId" class="btn btn-dark">Detaylar</button></td>
+                        </tr>
+                        <div class="modal" id="Modal1-@item.TeacherId" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">@item.Name</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>@item.Title</p>
+                                        <p><strong>Twitter: </strong>@item.TwitterUrl</p>
+                                        <p><strong>Facebook: </strong>@item.FacebookUrl</p>
+                                        <p><strong>Linkedin: </strong>@item.LinkedinUrl</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </tbody>
+            </table>
+            <a href="/AdminTeacher/CreateTeacher/" class="btn btn-primary">Yeni Öğretmen Girişi</a>
+        </div>
+    </div>
+</div>

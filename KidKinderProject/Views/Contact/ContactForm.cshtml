@@ -1,0 +1,44 @@
+﻿@model KidKinderProject.Models.SendMessageViewModel
+
+<div class="col-lg-7 mb-5">
+    <div class="contact-form">
+        <div id="success"></div>
+        <form method="post" action="/Contact/Index/">
+            <div class="control-group">
+                @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+                @Html.ValidationMessageFor(y => y.NameSurname, "", new { @class = "text-danger" })
+            </div>
+            <div class="control-group">
+                <input type="email"
+                       class="form-control"
+                       id="email"
+                       placeholder="Your Email"
+                       />
+                <p class="help-block text-danger"></p>
+            </div>
+            <div class="control-group">
+                <input type="text"
+                       class="form-control"
+                       id="subject"
+                       placeholder="Subject"
+                        />
+                <p class="help-block text-danger"></p>
+            </div>
+            <div class="control-group">
+                <textarea class="form-control"
+                          rows="6"
+                          id="message"
+                          placeholder="Message"
+                          ></textarea>
+                <p class="help-block text-danger"></p>
+            </div>
+            <div>
+                <button class="btn btn-primary py-2 px-4"
+                        type="submit"
+                        id="sendMessageButton">
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

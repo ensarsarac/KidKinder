@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Ana Sayfa";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@Html.Partial("~/Views/UILayout/_HeadPartial.cshtml")
+<body>
+    @Html.Partial("~/Views/UILayout/_NavbarPartial.cshtml")
+    @Html.Action("_FeaturePartial")
+    @Html.Action("_ServicePartial", "UILayout")
+    @Html.Action("_AboutPartial", "UILayout")
+    @Html.Action("_ClassRoomPartial", "UILayout")
+    @Html.Partial("~/Views/UILayout/_BookASeatPartial.cshtml")
+    @Html.Action("_TeachersPartial", "UILayout")
+    @Html.Action("_TestimonialPartial", "UILayout")
+    @Html.Partial("~/Views/UILayout/_FooterPartial.cshtml")
+    <a href="#" class="btn btn-primary p-3 back-to-top">
+        <i class="fa fa-angle-double-up"></i>
+    </a>
+    @Html.Partial("~/Views/UILayout/_ScriptsPartial.cshtml")
+</body>
+</html>

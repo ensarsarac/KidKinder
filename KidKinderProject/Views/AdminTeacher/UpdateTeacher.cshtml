@@ -1,0 +1,43 @@
+﻿@model KidKinderProject.Models.UpdateTeacherViewModel
+@{
+    ViewBag.Title = "UpdateTeacher";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h5>Öğretmen Güncelleme Sayfası</h5>
+    </div>
+    <div class="card-block">
+        <form class="form-material" method="post">
+            @Html.HiddenFor(x=>x.TeacherId)
+            <span class="text-danger">
+                @Html.ValidationSummary()
+            </span>
+            <div class="form-group form-default">
+                <input type="text" name="Name" placeholder="Adınız" value="@Model.Name" class="form-control">
+                <span class="form-bar"></span>
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="Title" placeholder="Alanınız" value="@Model.Title" class="form-control">
+                <span class="form-bar"></span>
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="ImageUrl" placeholder="Resim" value="@Model.ImageUrl" class="form-control">
+                <span class="form-bar"></span>
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="FacebookUrl" placeholder="Facebook" value="@Model.FacebookUrl" class="form-control">
+                <span class="form-bar"></span>
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="TwitterUrl" placeholder="Twitter" value="@Model.TwitterUrl" class="form-control">
+                <span class="form-bar"></span>
+            </div>
+            <div class="form-group form-default">
+                <input type="text" name="LinkedinUrl" placeholder="Linkedin" value="@Model.LinkedinUrl" class="form-control">
+                <span class="form-bar"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Öğretmeni Güncelle</button>
+        </form>
+    </div>
+</div>
