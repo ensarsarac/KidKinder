@@ -134,6 +134,7 @@
     <Compile Include="Controllers\AdminTeacherController.cs" />
     <Compile Include="Controllers\ClassroomController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -671,9 +672,11 @@
     <Content Include="Views\AdminClassroom\ClassroomList.cshtml" />
     <Content Include="Views\AdminClassroom\CreateClassroom.cshtml" />
     <Content Include="Views\AdminClassroom\UpdateClassroom.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="TeacherImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

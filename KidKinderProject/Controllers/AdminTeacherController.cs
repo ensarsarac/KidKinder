@@ -3,6 +3,7 @@ using KidKinderProject.Entities;
 using KidKinderProject.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -23,6 +24,7 @@ namespace KidKinderProject.Controllers
         [HttpPost]
         public ActionResult CreateTeacher(CreateTeacherViewModel teacher)
         {
+           
             if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("", "Form bilgilerini eksiksiz doldurun");

@@ -1,6 +1,10 @@
 ﻿@model KidKinderProject.Models.CreateTeacherViewModel
 @{
     ViewBag.Title = "CreateTeacher";
+    TempData["Text1"] = "Öğretmen Listesi";
+    TempData["Text2"] = "Yeni Öğretmen Girişi";
+    TempData["Url1"] = "/AdminTeacher/TeacherList/";
+    TempData["Url2"] = "/AdminTeacher/CreateTeacher/";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <div class="card">
