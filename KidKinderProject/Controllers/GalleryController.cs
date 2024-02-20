@@ -7,8 +7,10 @@ using System.Web.Mvc;
 
 namespace KidKinderProject.Controllers
 {
+    [AllowAnonymous]
     public class GalleryController : Controller
     {
+        
         KidKinderContext db = new KidKinderContext();
         public ActionResult Index()
         {

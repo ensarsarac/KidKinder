@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace KidKinderProject.Controllers
 {
+    [AllowAnonymous]
     public class UILayoutController : Controller
     {
         KidKinderContext db = new KidKinderContext();

@@ -1,0 +1,24 @@
+﻿@model KidKinderProject.Models.AdminViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="AdminId" value="@Model.AdminId" />
+    <div class="form-group">
+        <label class="form-label">Kullanıcı Adı</label>
+        <input type="text" value="@Model.Username" name="Username" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Resim</label>
+        <input type="file" value="@Model.ImageUrl" name="ImageUrl" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Şifre</label>
+        <input type="text" value="@Model.Password" name="Password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Profili Güncelle</button>
+</form>
+

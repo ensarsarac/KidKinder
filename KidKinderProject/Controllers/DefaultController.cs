@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace KidKinderProject.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         KidKinderContext db = new KidKinderContext();

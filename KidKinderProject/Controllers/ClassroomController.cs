@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace KidKinderProject.Controllers
 {
+    [AllowAnonymous]
     public class ClassroomController : Controller
     {
         // GET: Classroom

@@ -32,7 +32,9 @@ namespace KidKinderProject.Controllers
         }
         public PartialViewResult _AdminSideBarPartial()
         {
-            return PartialView();
+            var onlineUser = context.Admins.Where(x => x.Username == User.Identity.Name).FirstOrDefault();
+            var onlineUserImage = onlineUser.ImageUrl;
+            return PartialView(onlineUser);
         }
         public PartialViewResult _AdminScriptPartial()
         {
