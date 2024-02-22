@@ -10,8 +10,8 @@ namespace KidKinderProject.Models
     {
         [Required(ErrorMessage ="Ad alanı boş bırakılamaz.")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Öğretmen alanı boş bırakılamaz.")]
-        public string Title { get; set; }
+        [Required(ErrorMessage = "Öğretmen branşı boş bırakılamaz.")]
+        public int BranchId { get; set; }
         [Required(ErrorMessage = "Resim alanı boş bırakılamaz.")]
         public string ImageUrl { get; set; }
         public string FacebookUrl { get; set; }

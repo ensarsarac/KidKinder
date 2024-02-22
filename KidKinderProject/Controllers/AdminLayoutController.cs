@@ -24,6 +24,7 @@ namespace KidKinderProject.Controllers
         }
         public PartialViewResult _AdminNavbarPartial()
         {
+            
             return PartialView();
         }
         public PartialViewResult _AdminNotificationPartial()
@@ -46,7 +47,8 @@ namespace KidKinderProject.Controllers
         }
         public PartialViewResult _AdminNavbarProfileHeaderPartial()
         {
-            return PartialView();
+            var onlineUser = context.Admins.Where(x => x.Username == User.Identity.Name).FirstOrDefault();
+            return PartialView(onlineUser);
         }
     }
 }

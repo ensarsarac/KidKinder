@@ -6,6 +6,7 @@
     TempData["Url1"] = "/AdminTeacher/TeacherList/";
     TempData["Url2"] = "/AdminTeacher/CreateTeacher/";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
 }
 
 <div class="card">
@@ -30,10 +31,11 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
+                        count++;
                         <tr>
-                            <th scope="row">@item.TeacherId</th>
-                            <td><img src="~/@item.ImageUrl" class="img-thumbnail rounded-pill mr-3" style="width:75px; height:75px;" />@item.Name</td>
-                            <td>@item.Title</td>
+                            <th scope="row">@count</th>
+                            <td><img src="@item.ImageUrl" class="img-thumbnail rounded-pill mr-3" style="width:75px; height:75px;" />@item.Name</td>
+                            <td>@item.Branch.BranchName</td>
                             <td><a href="/AdminTeacher/RemoveTeacher/@item.TeacherId" class="btn btn-outline-danger">Sil</a></td>
                             <td><a href="/AdminTeacher/UpdateTeacher/@item.TeacherId" class="btn btn-outline-success">Güncelle</a></td>
                             <td><button type="button" data-toggle="modal" data-target="#Modal1-@item.TeacherId" class="btn btn-outline-dark">Detaylar</button></td>
@@ -42,11 +44,11 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title"><img src="~/@item.ImageUrl" class="img-thumbnail rounded-pill mr-3" style="width:75px; height:75px;" /> @item.Name</h5>
+                                        <h5 class="modal-title"><img src="@item.ImageUrl" class="img-thumbnail rounded-pill mr-3" style="width:75px; height:75px;" /> @item.Name</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>@item.Title</p>
+                                        <p>@item.Branch.BranchName</p>
                                         <p><strong>Twitter: </strong>@item.TwitterUrl</p>
                                         <p><strong>Facebook: </strong>@item.FacebookUrl</p>
                                         <p><strong>Linkedin: </strong>@item.LinkedinUrl</p>

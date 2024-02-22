@@ -147,6 +147,7 @@
     <Compile Include="Entities\AboutList.cs" />
     <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\BookASeat.cs" />
+    <Compile Include="Entities\Branch.cs" />
     <Compile Include="Entities\Classroom.cs" />
     <Compile Include="Entities\Communication.cs" />
     <Compile Include="Entities\Contact.cs" />
@@ -184,6 +185,18 @@
     <Compile Include="Migrations\202402201957415_mig-update-admin.cs" />
     <Compile Include="Migrations\202402201957415_mig-update-admin.designer.cs">
       <DependentUpon>202402201957415_mig-update-admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221057459_mig_remove_teachertitle.cs" />
+    <Compile Include="Migrations\202402221057459_mig_remove_teachertitle.designer.cs">
+      <DependentUpon>202402221057459_mig_remove_teachertitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221105094_mig_add_branch.cs" />
+    <Compile Include="Migrations\202402221105094_mig_add_branch.designer.cs">
+      <DependentUpon>202402221105094_mig_add_branch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221113150_mig_branch_teacher_relationship.cs" />
+    <Compile Include="Migrations\202402221113150_mig_branch_teacher_relationship.designer.cs">
+      <DependentUpon>202402221113150_mig_branch_teacher_relationship.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CreateClassroomViewModel.cs" />
@@ -250,6 +263,10 @@
     <Content Include="Templates\kidkinder-1.0.0\img\team-2.jpg" />
     <Content Include="Templates\kidkinder-1.0.0\img\team-3.jpg" />
     <Content Include="Templates\kidkinder-1.0.0\img\team-4.jpg" />
+    <Content Include="Templates\kidkinder-1.0.0\img\team-5.jpg" />
+    <Content Include="Templates\kidkinder-1.0.0\img\team-6.jpg" />
+    <Content Include="Templates\kidkinder-1.0.0\img\team-7.jpg" />
+    <Content Include="Templates\kidkinder-1.0.0\img\team-8.jpg" />
     <Content Include="Templates\kidkinder-1.0.0\img\testimonial-1.jpg" />
     <Content Include="Templates\kidkinder-1.0.0\img\testimonial-2.jpg" />
     <Content Include="Templates\kidkinder-1.0.0\img\testimonial-3.jpg" />
@@ -839,6 +856,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402201957415_mig-update-admin.resx">
       <DependentUpon>202402201957415_mig-update-admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221057459_mig_remove_teachertitle.resx">
+      <DependentUpon>202402221057459_mig_remove_teachertitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221105094_mig_add_branch.resx">
+      <DependentUpon>202402221105094_mig_add_branch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221113150_mig_branch_teacher_relationship.resx">
+      <DependentUpon>202402221113150_mig_branch_teacher_relationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

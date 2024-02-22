@@ -19,6 +19,7 @@ namespace KidKinderProject.Controllers
         }
         public ActionResult CreateTeacher()
         {
+            ViewBag.teacherBranch = new SelectList(context.Branches.ToList(), "BranchID", "BranchName");
             return View();
         }        
         [HttpPost]
@@ -36,7 +37,8 @@ namespace KidKinderProject.Controllers
                 FacebookUrl = teacher.FacebookUrl,
                 ImageUrl = teacher.ImageUrl,
                 LinkedinUrl = teacher.LinkedinUrl,
-                Title = teacher.Title,
+                BranchID = teacher.BranchId,
+                //Title = teacher.Title,
                 TwitterUrl = teacher.TwitterUrl
             };
             context.Teachers.Add(newTeacher);
@@ -54,6 +56,7 @@ namespace KidKinderProject.Controllers
         [HttpGet]
         public ActionResult UpdateTeacher(int id)
         {
+            ViewBag.teacherBranch = new SelectList(context.Branches.ToList(), "BranchID", "BranchName");
             var value=context.Teachers.Find(id);
             var teacher = new UpdateTeacherViewModel()
             {
@@ -62,7 +65,7 @@ namespace KidKinderProject.Controllers
                 ImageUrl = value.ImageUrl,
                 LinkedinUrl = value.LinkedinUrl,
                 Name = value.Name,
-                Title = value.Title,
+                BranchId = value.BranchID,
                 TwitterUrl = value.TwitterUrl,
             };
             return View(teacher);
@@ -71,12 +74,13 @@ namespace KidKinderProject.Controllers
         public ActionResult UpdateTeacher(UpdateTeacherViewModel model)
         {
             var value = context.Teachers.Find(model.TeacherId);
-            value.Title = model.Title;
+            //value.Title = model.Title;
             value.Name = model.Name;
             value.ImageUrl = model.ImageUrl;
             value.FacebookUrl = model.FacebookUrl;
             value.TwitterUrl = model.TwitterUrl;
             value.LinkedinUrl = model.LinkedinUrl;
+            value.BranchID = model.BranchId;
             context.SaveChanges();
             return RedirectToAction("TeacherList", "AdminTeacher");
         }

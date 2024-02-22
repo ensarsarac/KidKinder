@@ -9,7 +9,7 @@ namespace KidKinderProject.Models
     {
         public int TeacherId { get; set; }
         public string Name { get; set; }
-        public string Title { get; set; }
+        public int BranchId{ get; set; }
         public string ImageUrl { get; set; }
         public string FacebookUrl { get; set; }
         public string TwitterUrl { get; set; }
