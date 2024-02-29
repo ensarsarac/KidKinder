@@ -1,0 +1,44 @@
+﻿@model List<KidKinderProject.Entities.MailSubscribe>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Mail Bülteni Listesi</h5>
+        <span>Mail Bülteni ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+
+    </div>
+    <div class="card-block table-border-style">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ad Soyad</th>
+                        <th>Email</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <th scope="row">@count</th>                            
+                            <td>@item.NameSurname</td>
+                            <td>@item.Email</td>
+                            <td><a href="/AdminMailSubscribe/RemoveMailSubscribe/@item.MailSubscribeId" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/AdminMailSubscribe/UpdateMailSubscribe/@item.MailSubscribeId" class="btn btn-outline-success">Güncelle</a></td>                            
+                        </tr>
+                        
+                    }
+                </tbody>
+            </table>
+            <a href="/AdminMailSubscribe/CreateMailSubscribe/" class="btn btn-outline-primary">Yeni Mail Bülteni Girişi</a>
+        </div>
+    </div>
+</div>

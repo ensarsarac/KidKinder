@@ -1,0 +1,22 @@
+﻿@model KidKinderProject.Entities.Branch
+
+@{
+    ViewBag.Title = "UpdateBranch";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Branş Güncelleme Sayfası</h5>
+    </div>
+    <div class="card-block">
+        <form class="form-material" method="post">
+            <input type="hidden" name="BranchID" value="@Model.BranchID" />
+            <div class="form-group form-default">
+                <input type="text" name="BranchName" value="@Model.BranchName" placeholder="Branş Adı" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-outline-primary">Branşı Güncelle</button>
+        </form>
+    </div>
+</div>

@@ -1,7 +1,5 @@
 ﻿
 
-
-
 @model KidKinderProject.Entities.BookASeat
 
 <div class="col-lg-5">
@@ -26,7 +24,7 @@
                            required="required" />
                 </div>
                 <div class="form-group">
-                    @Html.DropDownListFor(x => x.ClassRoomId, (SelectList)ViewBag.ClassRoom, "Sınıf Seçiniz", new { @class = "form-control", @id = "drop" })
+                    @Html.DropDownListFor(x => x.ClassroomId, (SelectList)ViewBag.ClassRoom, "Sınıf Seçiniz", new { @class = "form-control", @id = "drop" })
                 </div>
                 <div>
                     <button onclick="booknow()" class="btn btn-secondary btn-block border-0 py-3"

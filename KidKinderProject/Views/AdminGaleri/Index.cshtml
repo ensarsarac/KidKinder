@@ -1,0 +1,54 @@
+﻿@model List<KidKinderProject.Entities.Gallery>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Galeri Listesi</h5>
+        <span>Galeri ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+
+    </div>
+    <div class="card-block table-border-style">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Resim Yolu</th>
+                        <th>Durum</th>
+                        <th>Aktif Yap</th>
+                        <th>Pasif Yap</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td>@item.Path</td>
+                        @if (item.Status)
+                        {
+                            <td><span class="badge badge-success">Aktif</span></td>
+                        }
+                        else
+                        {
+                            <td><span class="badge badge-danger">Pasif</span></td>
+                        }
+                        <td><a href="/AdminGaleri/ImageChangeStatusTrue/@item.GalleryId" class="btn btn-outline-info">Aktif Yap</a></td>
+                        <td><a href="/AdminGaleri/ImageChangeStatusFalse/@item.GalleryId" class="btn btn-outline-danger">Pasif Yap</a></td>
+                        <td><a href="/AdminGaleri/UpdateImage/@item.GalleryId" class="btn btn-outline-success">Güncelle</a></td>
+                        
+                    </tr>
+                       
+                    }
+                </tbody>
+            </table>
+            <a href="/AdminGaleri/CreateImage/" class="btn btn-outline-primary">Yeni Resim Ekle</a>
+        </div>
+    </div>
+</div>

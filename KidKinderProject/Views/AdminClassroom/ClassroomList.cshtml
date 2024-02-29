@@ -32,9 +32,9 @@
                             <th scope="row">@count</th>                            
                             <td>@item.Title</td>
                             <td>@item.Price</td>
-                            <td><a href="/AdminClassroom/RemoveClassroom/@item.ClassroomId" class="btn btn-danger">Sil</a></td>
-                            <td><a href="/AdminClassroom/UpdateClassroom/@item.ClassroomId" class="btn btn-success">Güncelle</a></td>
-                            <td><button type="button" data-toggle="modal" data-target="#Modal1-@item.ClassroomId" class="btn btn-dark">Detaylar</button></td>
+                            <td><a href="/AdminClassroom/RemoveClassroom/@item.ClassroomId" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/AdminClassroom/UpdateClassroom/@item.ClassroomId" class="btn btn-outline-success">Güncelle</a></td>
+                            <td><button type="button" data-toggle="modal" data-target="#Modal1-@item.ClassroomId" class="btn btn-outline-dark">Detaylar</button></td>
                         </tr>
                         <div class="modal" id="Modal1-@item.ClassroomId" tabindex="-1">
                             <div class="modal-dialog">
@@ -51,7 +51,7 @@
                                         <p><strong>Fiyat: </strong>@item.Price</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Kapat</button>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                     }
                 </tbody>
             </table>
-            <a href="/AdminClassroom/CreateClassroom/" class="btn btn-primary">Yeni Sınıf Ekle</a>
+            <a href="/AdminClassroom/CreateClassroom/" class="btn btn-outline-primary">Yeni Sınıf Ekle</a>
         </div>
     </div>
 </div>

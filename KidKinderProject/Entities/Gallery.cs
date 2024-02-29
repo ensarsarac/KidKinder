@@ -11,5 +11,6 @@ namespace KidKinderProject.Entities
         [Key]
         public int GalleryId { get; set; }
         public string Path { get; set; }
+        public bool Status{ get; set; }
     }
 }

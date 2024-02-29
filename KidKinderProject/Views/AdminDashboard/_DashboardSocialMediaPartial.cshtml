@@ -1,0 +1,28 @@
+﻿@model List<KidKinderProject.Entities.SocialMedia>
+
+<div class="col-xl-6 col-md-12">
+    <div class="col-sm-12 text-center mb-3">
+        <h5 class="ml-2">Sosyal Medya Hesaplarımız</h5>
+    </div>
+    <div class="row">
+        <!-- sale card start -->
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6">
+                <div class="card text-center order-visitor-card">
+                    <div class="card-block">
+                        <h6 class="m-b-0">@item.Platform</h6>
+                        <h4 class="m-t-15 m-b-15"><i class="@item.Icon m-r-15 "></i></h4>
+                        <p class="m-b-0">@item.Url</p>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="col-sm-12 text-center mb-3">
+            <h5 class="ml-2">Sınıflarımız</h5>
+        </div>
+        @Html.Action("_DashboardClassroomPartial")
+
+    </div>
+
+</div>

@@ -129,14 +129,28 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\KidKinderContext.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminAboutController.cs" />
+    <Compile Include="Controllers\AdminAboutListController.cs" />
     <Compile Include="Controllers\AdminClassroomController.cs" />
+    <Compile Include="Controllers\AdminCommunicationController.cs" />
+    <Compile Include="Controllers\AdminContactController.cs" />
+    <Compile Include="Controllers\AdminFeatureController.cs" />
+    <Compile Include="Controllers\AdminGaleriController.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
+    <Compile Include="Controllers\AdminMailSubscribeController.cs" />
+    <Compile Include="Controllers\AdminNotificationController.cs" />
     <Compile Include="Controllers\AdminProfileController.cs" />
+    <Compile Include="Controllers\AdminServiceController.cs" />
+    <Compile Include="Controllers\AdminSocialMediaController.cs" />
+    <Compile Include="Controllers\AdminStatisticController.cs" />
     <Compile Include="Controllers\AdminTeacherController.cs" />
+    <Compile Include="Controllers\AdminBranchController.cs" />
+    <Compile Include="Controllers\AdminTestimonialController.cs" />
+    <Compile Include="Controllers\AdminBookASeatController.cs" />
     <Compile Include="Controllers\ClassroomController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\AdminDashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
@@ -198,7 +212,16 @@
     <Compile Include="Migrations\202402221113150_mig_branch_teacher_relationship.designer.cs">
       <DependentUpon>202402221113150_mig_branch_teacher_relationship.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402281635292_gallerytable_add_status.cs" />
+    <Compile Include="Migrations\202402281635292_gallerytable_add_status.designer.cs">
+      <DependentUpon>202402281635292_gallerytable_add_status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402290914426_mig-update-bookaseat.cs" />
+    <Compile Include="Migrations\202402290914426_mig-update-bookaseat.designer.cs">
+      <DependentUpon>202402290914426_mig-update-bookaseat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ChartViewModel.cs" />
     <Compile Include="Models\CreateClassroomViewModel.cs" />
     <Compile Include="Models\CreateTeacherViewModel.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -242,6 +265,7 @@
     <Content Include="Templates\kidkinder-1.0.0\gallery.html" />
     <Content Include="Templates\kidkinder-1.0.0\img\about-1.jpg" />
     <Content Include="Templates\kidkinder-1.0.0\img\about-2.jpg" />
+    <Content Include="Templates\kidkinder-1.0.0\img\anasinifi.jpg" />
     <Content Include="Templates\kidkinder-1.0.0\img\blog-1.jpg" />
     <Content Include="Templates\kidkinder-1.0.0\img\blog-2.jpg" />
     <Content Include="Templates\kidkinder-1.0.0\img\blog-3.jpg" />
@@ -717,7 +741,6 @@
     <Content Include="Views\AdminClassroom\ClassroomList.cshtml" />
     <Content Include="Views\AdminClassroom\CreateClassroom.cshtml" />
     <Content Include="Views\AdminClassroom\UpdateClassroom.cshtml" />
-    <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Templates\login-form-20\.DS_Store" />
     <Content Include="Templates\login-form-20\css\.DS_Store" />
     <Content Include="Templates\login-form-20\css\bootstrap\.DS_Store" />
@@ -820,6 +843,44 @@
     <Content Include="Views\AdminLogin\Index.cshtml" />
     <Content Include="Views\AdminProfile\Index.cshtml" />
     <Content Include="Views\ErrorPage\NotFound404.cshtml" />
+    <Content Include="Views\AdminDashboard\Index.cshtml" />
+    <Content Include="Views\AdminAboutList\Index.cshtml" />
+    <Content Include="Views\AdminAboutList\CreateAboutList.cshtml" />
+    <Content Include="Views\AdminAboutList\UpdateAboutList.cshtml" />
+    <Content Include="Views\AdminAbout\Index.cshtml" />
+    <Content Include="Views\AdminAbout\UpdateAbout.cshtml" />
+    <Content Include="Views\AdminBranch\Index.cshtml" />
+    <Content Include="Views\AdminBranch\CreateBranch.cshtml" />
+    <Content Include="Views\AdminBranch\UpdateBranch.cshtml" />
+    <Content Include="Views\AdminCommunication\UpdateCommunication.cshtml" />
+    <Content Include="Views\AdminCommunication\Index.cshtml" />
+    <Content Include="Views\AdminContact\Index.cshtml" />
+    <Content Include="Views\AdminFeature\Index.cshtml" />
+    <Content Include="Views\AdminFeature\UpdateFeature.cshtml" />
+    <Content Include="Views\AdminGaleri\Index.cshtml" />
+    <Content Include="Views\AdminGaleri\CreateImage.cshtml" />
+    <Content Include="Views\AdminGaleri\UpdateImage.cshtml" />
+    <Content Include="Views\UILayout\_ClassRoomPartial2.cshtml" />
+    <Content Include="Views\AdminMailSubscribe\Index.cshtml" />
+    <Content Include="Views\AdminMailSubscribe\CreateMailSubscribe.cshtml" />
+    <Content Include="Views\AdminMailSubscribe\UpdateMailSubscribe.cshtml" />
+    <Content Include="Views\AdminService\Index.cshtml" />
+    <Content Include="Views\AdminService\CreateService.cshtml" />
+    <Content Include="Views\AdminService\UpdateService.cshtml" />
+    <Content Include="Views\AdminSocialMedia\Index.cshtml" />
+    <Content Include="Views\AdminSocialMedia\CreateSocialMedia.cshtml" />
+    <Content Include="Views\AdminSocialMedia\UpdateSocialMedia.cshtml" />
+    <Content Include="Views\AdminTestimonial\Index.cshtml" />
+    <Content Include="Views\AdminBookASeat\Index.cshtml" />
+    <Content Include="Views\AdminBookASeat\CreateBookASeat.cshtml" />
+    <Content Include="Views\AdminBookASeat\UpdateBookASeat.cshtml" />
+    <Content Include="Views\AdminNotification\Index.cshtml" />
+    <Content Include="Views\AdminNotification\CreateNotification.cshtml" />
+    <Content Include="Views\AdminNotification\UpdateNotification.cshtml" />
+    <Content Include="Views\AdminDashboard\_DashboardTeacherPartial.cshtml" />
+    <Content Include="Views\AdminDashboard\_DashboardSocialMediaPartial.cshtml" />
+    <Content Include="Views\AdminDashboard\_DashboardClassroomPartial.cshtml" />
+    <Content Include="Views\AdminStatistic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminImages\" />
@@ -865,6 +926,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402221113150_mig_branch_teacher_relationship.resx">
       <DependentUpon>202402221113150_mig_branch_teacher_relationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402281635292_gallerytable_add_status.resx">
+      <DependentUpon>202402281635292_gallerytable_add_status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402290914426_mig-update-bookaseat.resx">
+      <DependentUpon>202402290914426_mig-update-bookaseat.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

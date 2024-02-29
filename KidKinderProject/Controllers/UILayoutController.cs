@@ -54,6 +54,11 @@ namespace KidKinderProject.Controllers
         }
         public PartialViewResult _ClassRoomPartial()
         {
+            var values = db.Classrooms.OrderByDescending(x => x.ClassroomId).Take(3).ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult _ClassRoomPartial2()
+        {
             var values = db.Classrooms.ToList();
             return PartialView(values);
         }

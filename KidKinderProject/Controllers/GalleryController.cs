@@ -18,7 +18,8 @@ namespace KidKinderProject.Controllers
         }
         public PartialViewResult _GalleryPartial()
         {
-            return PartialView(db.Galleries.ToList());
+            var values = db.Galleries.Where(x => x.Status == true).Take(6).ToList();
+            return PartialView(values);
         }
     }
 }

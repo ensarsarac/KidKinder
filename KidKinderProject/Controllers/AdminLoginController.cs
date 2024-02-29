@@ -25,7 +25,7 @@ namespace KidKinderProject.Controllers
             {
                 FormsAuthentication.SetAuthCookie(admin.Username, false);
                 Session["Username"] = adminInfo.Username.ToString();
-                return RedirectToAction("TeacherList", "AdminTeacher");
+                return RedirectToAction("Index", "AdminDashboard");
             }
             else
             {
